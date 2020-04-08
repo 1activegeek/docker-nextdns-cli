@@ -15,6 +15,10 @@ if [ -n "$NEXTDNS_FORWARDING_DOMAIN" ]; then
     fi
 fi
 
+if [ -n "NEXTDNS_CONF_FILE" ]; then
+  NEXTDNS_ARGUMENTS=""
+fi
+
 echo "Running nextdns with arguments: $NEXTDNS_ARGUMENTS"
 
 /usr/bin/nextdns run $NEXTDNS_ARGUMENTS
