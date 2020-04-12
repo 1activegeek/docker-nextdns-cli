@@ -10,7 +10,7 @@ RUN apt update && apt install -y apt-transport-https wget gnupg && \
 
 COPY root/ /
 
-RUN chmod +r /etc/dnsmasq.conf && chmod +x /var/nextdns/run.sh
+RUN chmod +r /etc/dnsmasq.conf
 
 HEALTHCHECK --interval=60s --timeout=10s --start-period=5s --retries=1 \
 	CMD dig +time=20 @127.0.0.1 -p 53 probe-test.dns.nextdns.io && dig +time=20 @127.0.0.1 -p 8053 probe-test.dns.nextdns.io
