@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y apt-transport-https wget gnupg && \
 		wget -qO - https://nextdns.io/repo.gpg | apt-key add - && \
 		echo "deb https://nextdns.io/repo/deb stable main" | tee /etc/apt/sources.list.d/nextdns.list && \
 		apt-get update && apt-get install -y nextdns dnsmasq dnsutils && \
-		apt-get clean && rm -rf /var/lib/apt/lists/*
+		apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 COPY root/ /
 
