@@ -1,0 +1,7 @@
+# Configuration for NextDNS.io
+
+listen :8053
+report-client-info yes
+log-queries yes
+
+config $NEXTDNS_CONFIG
